@@ -1,0 +1,57 @@
+type User {
+  id: ID! @id
+  username: String!
+  email: String!
+  fistName: String @default(value: "")
+  lastName: String!
+  bio: String
+  posts: [Post!]!
+  likes: [Like!]!
+  comments: [Comment!]!
+  followers: [User!]! @relation(name: "FollowRelation")
+  following: [User!]! @relation(name: "FollowRelation")
+  rooms: [Room!]!
+}
+
+type Post {
+  id: ID! @id
+  files: [File!]!
+  location: String
+  caption: String!
+  user: User!
+  likes: [Like!]!
+  comments: [Comment!]!
+}
+
+type Like {
+  id: ID! @id
+  user: User!
+  post: Post!
+}
+
+type Comment {
+  id: ID! @id
+  text: String!
+  user: User!
+  post: Post!
+}
+
+type File {
+  id: ID! @id
+  url: String!
+  post: Post!
+}
+
+type Room {
+  id: ID! @id
+  participants: [User!]!
+  messages: [Message!]!
+}
+
+type Message {
+  id: ID! @id
+  text: String!
+  from: User! @relation(name: "From")
+  to: User! @relation(name: "To")
+  room: Room!
+}
