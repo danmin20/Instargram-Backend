@@ -2,24 +2,24 @@ type User {
   id: ID! @id
   username: String! @unique
   email: String! @unique
-  firstName: String
+  firstName: String @default(value:"")
   lastName: String
   bio: String
+  followers: [User!]! @relation(name: "FollowRelation")
+  following: [User!]! @relation(name: "FollowRelation")
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
-  followers: [User!]! @relation(name: "FollowRelation")
-  following: [User!]! @relation(name: "FollowRelation")
   rooms: [Room!]!
   loginSecret: String!
 }
 
 type Post {
   id: ID! @id
-  files: [File!]!
   location: String
   caption: String!
   user: User!
+  files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
 }

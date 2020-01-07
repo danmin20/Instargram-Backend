@@ -8,7 +8,7 @@ export default {
       const { user } = request;
       try {
         const existingFollow = await prisma.$exists.user({
-          AND: [{ id: user.id }, { followers_some: { id: id } }]
+          AND: [{ id }, { followers_some: { id: user.id } }]
         });
         if (existingFollow) {
           await prisma.updateUser({
