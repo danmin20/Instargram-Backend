@@ -1,9 +1,9 @@
 type User {
   id: ID! @id
-  username: String!
-  email: String!
-  fistName: String @default(value: "")
-  lastName: String!
+  username: String! @unique
+  email: String! @unique
+  firstName: String
+  lastName: String
   bio: String
   posts: [Post!]!
   likes: [Like!]!
@@ -11,6 +11,7 @@ type User {
   followers: [User!]! @relation(name: "FollowRelation")
   following: [User!]! @relation(name: "FollowRelation")
   rooms: [Room!]!
+  loginSecret: String!
 }
 
 type Post {
