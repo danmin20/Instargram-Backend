@@ -1,9 +1,17 @@
+export const USER_FRAGMENT = `
+    id
+    username
+`;
+
 export const COMMENT_FRAGMENT = `
-    fragment CommentParts on Comment {
-        id
-        text
-        user {
-            username
-        }
+    id
+    text
+    user {
+        ${USER_FRAGMENT}
     }
+`;
+
+export const FILE_FRAGMENT = `
+    id
+    url
 `;
