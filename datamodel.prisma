@@ -1,6 +1,8 @@
 type User {
   id: ID! @id
-  avatar: String
+  avatar: String @default(
+    value: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+  )
   username: String! @unique
   email: String! @unique
   firstName: String @default(value:"")
