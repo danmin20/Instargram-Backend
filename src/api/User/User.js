@@ -8,6 +8,21 @@ export default {
     likes: ({ id }) => prisma.user({ id }).likes(),
     comments: ({ id }) => prisma.user({ id }).comments(),
     rooms: ({ id }) => prisma.user({ id }).rooms(),
+    postsCount: ({ id }) =>
+      prisma
+        .postsConnection({ where: { user: { id } } })
+        .aggregate()
+        .count(),
+    followingCount: ({ id }) =>
+      prisma
+        .usersConnection({ where: { followers_some: { id } } })
+        .aggregate()
+        .count(),
+    followersCount: ({ id }) =>
+      prisma
+        .usersConnection({ where: { following_some: { id } } })
+        .aggregate()
+        .count(),
     fullName: parent => {
       return `${parent.firstName} ${parent.lastName}`;
     },
@@ -27,5 +42,5 @@ export default {
       const { id: parentId } = parent;
       return user.id === parentId;
     }
-  },
+  }
 };

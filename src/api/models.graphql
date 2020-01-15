@@ -10,8 +10,12 @@ type User {
   isSelf: Boolean!
   bio: String
   followers: [User!]!
+  followersCount: Int!
+
   following: [User!]!
+  followingCount: Int!
   posts: [Post!]!
+  postsCount: Int!
   likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
