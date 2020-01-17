@@ -9,7 +9,7 @@ Name : "Instargram"
 NodeJS<br>
 ES6<br>
 Express<br>
-GraphQl Yoga<br>
+GraphQL Yoga<br>
 Prisma<br>
 Apollo<br>
 Sendgrid<br>
