@@ -27,7 +27,7 @@ type User {
 type Post {
   id: ID!
   location: String
-  caption: String!
+  caption: String
   user: User!
   files: [File!]
   likes: [Like!]!
