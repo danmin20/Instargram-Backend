@@ -9,12 +9,16 @@ Name : "Instargram"
 ### Made with
 NodeJS<br>
 ES6<br>
-Express<br>
+React Hooks<br>
 GraphQL Yoga<br>
 Prisma<br>
 Apollo<br>
 Sendgrid<br>
-Passport
+Passport<br>
+Expo<br>
+AWS S3<br>
+Heroku<br>
+Netlify<br>
 
 ### ScreenShots
 ![image](https://user-images.githubusercontent.com/50590192/72657713-b3ce6580-39ea-11ea-93ce-73983b3efe2b.png)
