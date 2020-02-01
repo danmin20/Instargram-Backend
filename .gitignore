@@ -106,5 +106,4 @@ dist
 # next.js build output
 .next
 generated
-prisma.yml
 build
