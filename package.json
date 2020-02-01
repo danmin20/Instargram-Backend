@@ -10,10 +10,13 @@
     "@babel/core": "^7.7.7",
     "@babel/node": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
+    "@babel/runtime": "^7.8.4",
     "aws-sdk": "^2.610.0",
+    "copy": "^0.3.2",
     "dotenv": "^8.2.0",
     "graphql-tools": "^4.0.6",
     "graphql-yoga": "^1.18.3",
+    "heroku": "^7.37.0",
     "jsonwebtoken": "^8.5.1",
     "merge-graphql-schemas": "^1.7.5",
     "morgan": "^1.9.1",
@@ -26,12 +29,17 @@
     "prisma-client-lib": "^1.34.10"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "nodemon": "^2.0.2"
   },
   "scripts": {
     "deploy": "prisma deploy",
     "generate": "prisma generate",
     "prisma": "yarn run deploy && yarn generate",
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/server.js",
+    "prebuild": "yarn run prisma",
+    "build": "babel src -d build",
+    "postbuild": "npx copy src/api/**/*.graphql ./build/api/",
+    "start": "node build/server.js"
   }
 }

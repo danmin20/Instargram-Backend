@@ -103,6 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+# next.js build output
+.next
 generated
 prisma.yml
-.env
+build
