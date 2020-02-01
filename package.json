@@ -1,6 +1,9 @@
 {
   "name": "instargram",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.14.0"
+  },
   "description": "Instagram clone with Express, Prisma, React and React Native",
   "repository": "https://github.com/danmin20/instargram.git",
   "author": "Lee Jeong Min <danmin20@khu.ac.kr>",
@@ -27,6 +30,7 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "prisma": "^1.34.10",
     "prisma-client-lib": "^1.34.10"
   },
   "devDependencies": {
